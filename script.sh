@@ -1,0 +1,1 @@
+echo "Hello word conexion con repositorio git y ejecucion de script"
