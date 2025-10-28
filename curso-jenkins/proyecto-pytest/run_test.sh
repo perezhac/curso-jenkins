@@ -4,9 +4,11 @@ echo "iniciando ejecucion de pruebas en jenkins"
 
 #comprobar entorno virtual
 if [ ! -d "venv" ]; then
-    echo "entorno virtualno encontrado! creandolo.."
+    echo "entorno virtual no encontrado! creandolo.."
     python3 -m venv venv
 fi  
+
+ls
 
 #ejecutar entorno virtual correctamente
 if [ -f "venv/bin/activate" ]; then
