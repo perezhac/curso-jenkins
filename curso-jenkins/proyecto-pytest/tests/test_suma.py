@@ -10,4 +10,4 @@ def test_suma():
     assert suma(0,0) == 0
 
 def test_suma_fail():
-    assert suma(4,2) == 8
+    assert suma(4,2) == 6
