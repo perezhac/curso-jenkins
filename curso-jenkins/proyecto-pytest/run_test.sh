@@ -2,10 +2,6 @@
 
 echo "iniciando ejecucion de pruebas en jenkins"
 
-# Instalar dependencias del sistema (solo primera vez)
-apt-get update -y
-apt-get install -y python3-venv python3-pip
-
 #comprobar entorno virtual
 if [ ! -d "venv" ]; then
     echo "entorno virtual no encontrado! creandolo.."
