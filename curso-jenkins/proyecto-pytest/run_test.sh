@@ -8,20 +8,15 @@ if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi  
 
-ls
-cd venv
-cd bin
-./Activate
-
-#ejecutar entorno virtual correctamente
-#if [ -f "venv/bin/activate" ]; then
-#    source venv/bin/activate
+ejecutar entorno virtual correctamente
+if [ -f "venv/bin/activate" ]; then
+    source venv/bin/activate
 #elif [ -f "venv/Scripts/activate" ]; then 
 #    source venv/Scripts/activate  
 #else
 #    echo "no se pudo activar el entorno"
 #    exit 1
-#fi
+fi
 
 #verificando si pip esta instalado
 echo "instalando dependencias..."
