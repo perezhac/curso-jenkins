@@ -27,5 +27,7 @@ echo "instalando dependencias..."
 pip install --upgrade pip
 pip install -r requeriments.txt
 
+mkdir -p reports
+
 echo "Ejecutando pruebas con pytest"
 venv/bin/python -m pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-result.html
