@@ -10,7 +10,7 @@ fi
 
 #ejecutar entorno virtual correctamente
 if [ -f "venv/bin/activate" ]; then
-    source Cactivate
+    source venv/bin/activate
 elif [ -f "venv/Scripts/activate" ]; then 
     source venv/Scripts/activate  
 else
