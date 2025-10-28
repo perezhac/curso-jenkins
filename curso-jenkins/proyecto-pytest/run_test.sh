@@ -1,14 +1,27 @@
 #!/bin/bash
 
-echo "ejecutando entorno virtual"
-if [!"-d venv" ]; then
-    python3 -m venv venv
-fi     
-source venv/bin/activate
+echo "iniciando ejecucion de pruebas en jenkins"
 
-echo "instalando dependencias"
-pip install --upgrade pip
-pip install -r requeriments.txt
+#comprobar entorno virtual
+if [ ! -d "venv" ]; then
+    echo "entorno virtualno encontrado! creandolo.."
+    python3 -m venv venv
+fi  
+
+#ejecutar entorno virtual correctamente
+if [ -f "venv/bin/activate" ]; then
+    source Cactivate
+elif [ -f "venv/Scripts/activate" ]; then 
+    source venv/Scripts/activate  
+else
+    echo "no se pudo activar el entorno"
+    exit 1
+fi
+
+#verificando si pip esta instalado
+echo "instalando dependencias..."
+pip install --upgrade pip --break-system-packages
+pip install -r requeriments.txt --break-system-packages
 
 echo "Ejecutando pruebas con pytest"
-pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-result.html
+venv/bin/python -m pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-result.html
