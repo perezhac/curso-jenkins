@@ -6,25 +6,16 @@ echo "iniciando ejecucion de pruebas en jenkins"
 sudo apt-get update -y
 sudo apt-get install -y python3-venv python3-pip
 
-#comprobar entorno virtual
-if [ ! -d "venv" ]; then
-    echo "entorno virtual no encontrado! creandolo.."
-    python3 -m venv venv
-fi  
+# Borramos y recreamos el entorno virtual
+rm -rf venv
+python3 -m venv venv
+source venv/bin/activate
 
-#ejecutar entorno virtual correctamente
-if [ -f "venv/bin/activate" ]; then
-    source venv/bin/activate
-elif [ -f "venv/Scripts/activate" ]; then 
-    source venv/Scripts/activate  
-else
-    echo "no se pudo activar el entorno"
-    exit 1
-fi
+# Actualizamos pip y setuptools
+pip install --upgrade pip setuptools wheel
 
-#verificando si pip esta instalado
+# Instalamos dependencias
 echo "instalando dependencias..."
-pip install --upgrade pip
 pip install -r requeriments.txt
 
 echo "Ejecutando pruebas con pytest"
