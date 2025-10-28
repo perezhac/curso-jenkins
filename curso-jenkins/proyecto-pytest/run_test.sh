@@ -24,8 +24,8 @@ fi
 
 #verificando si pip esta instalado
 echo "instalando dependencias..."
-pip install --upgrade pip --break-system-packages
-pip install -r requeriments.txt --break-system-packages
+pip install --upgrade 
+pip install -r requeriments.txt 
 
 echo "Ejecutando pruebas con pytest"
 venv/bin/python -m pytest tests/ --junitxml=reports/test-result.xml --html=reports/test-result.html
