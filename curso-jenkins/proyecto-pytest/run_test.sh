@@ -8,7 +8,7 @@ if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi  
 
-ejecutar entorno virtual correctamente
+#ejecutar entorno virtual correctamente
 if [ -f "venv/bin/activate" ]; then
     source venv/bin/activate
 #elif [ -f "venv/Scripts/activate" ]; then 
