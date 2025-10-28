@@ -2,6 +2,10 @@
 
 echo "iniciando ejecucion de pruebas en jenkins"
 
+# Instalar dependencias del sistema (solo primera vez)
+apt-get update -y
+apt-get install -y python3-venv python3-pip
+
 #comprobar entorno virtual
 if [ ! -d "venv" ]; then
     echo "entorno virtual no encontrado! creandolo.."
@@ -11,11 +15,11 @@ fi
 #ejecutar entorno virtual correctamente
 if [ -f "venv/bin/activate" ]; then
     source venv/bin/activate
-#elif [ -f "venv/Scripts/activate" ]; then 
-#    source venv/Scripts/activate  
-#else
-#    echo "no se pudo activar el entorno"
-#    exit 1
+elif [ -f "venv/Scripts/activate" ]; then 
+    source venv/Scripts/activate  
+else
+    echo "no se pudo activar el entorno"
+    exit 1
 fi
 
 #verificando si pip esta instalado
