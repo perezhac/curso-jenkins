@@ -9,8 +9,8 @@ if [ ! -d "venv" ]; then
 fi  
 
 ls
-cd venv
-cd bin
+cd "venv"
+cd "bin"
 ./activate
 
 #ejecutar entorno virtual correctamente
