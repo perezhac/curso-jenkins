@@ -1,4 +1,4 @@
-Pipiline{
+pipiline{
     agent any
     stages{
         stage("Build"){
