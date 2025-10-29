@@ -30,3 +30,11 @@
  - Son extensiones que se agregan a jenkins y añaden nuevas funcionalidades
 
 # Variables 
+
+# Pipelines
+ - un pipeline es un conjunto de etapas que nos dice como se va a construir probar y desplegar una app.
+ - Por que usarlo?
+   - automatizacion completa desde la compilacion - despliegue
+   - Usamos un jenkinfile
+   - multiples agentes y nodos
+   - 
