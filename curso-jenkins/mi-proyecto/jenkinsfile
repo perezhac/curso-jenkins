@@ -1,4 +1,4 @@
-pipiline{
+Pipiline{
     agent any
     stages{
         stage("Build"){
@@ -24,7 +24,7 @@ pipiline{
         always{
             echo "se ejecutara siempre"
         }
-        sucess{
+        success{
             echo "se ejecutara cuando el pipeline sea exitoso"
         }
         failure{
